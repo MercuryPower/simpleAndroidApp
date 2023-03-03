@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MobileProject</string>
+    <string name="formName">Форма регистрации</string>
+    <string name='formEnterName'>Введите имя:</string>
+    <string name="formEnterName_NameSimple">Имя</string>
+    <string name='formEnterPassword'>Введите пароль:</string>
+    <string name="formEnterPassword_PasswordSimple">Пароль(не менее 8 символов)</string>
+    <string name="formEnterAge">Введите возраст:</string>
+    <string name="formEnterAge_AgeSimple">Возраст от 14 до 99 лет</string>
+    <string name='formEnterGender'>Выберите пол:</string>
+    <string name="formEnterGender_Male">Мужской</string>
+    <string name="formEnterGender_Female">Женский</string>
+    <string name='formSend'>Отправить</string>
+    <string name="formReset">Сбросить</string>
+</resources>
