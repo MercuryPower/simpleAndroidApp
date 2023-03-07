@@ -4,178 +4,351 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgWhite"
     tools:context=".MainActivity">
 
-
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="4dp"
-        android:autofillHints="name"
-        android:ems="10"
-        android:hint="@string/formEnterName_NameSimple"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/formNameContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="200dp"
-        android:text="@string/formEnterName"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/formName"
+            android:textSize="36sp"
+            android:textColor="@color/black"
+            android:inputType="textPersonName"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userNameContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="@string/formName"
-        android:textColor="@color/black"
-        android:textSize="40sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/formRequired"
+        app:helperTextTextColor="@color/red"
+        app:counterEnabled="true"
+        app:counterMaxLength="26"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/formNameContainer">
 
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="26"
+            android:hint="@string/formEnterName"
+            android:inputType="textPersonName"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/formRequired"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/formEnterGender"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginTop="30sp"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:passwordToggleEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@id/userNameContainer">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:hint="@string/formEnterPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ageContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginHorizontal="20dp"
+        app:helperText="@string/formRequired"
+        app:helperTextTextColor="@color/red"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/Age">
-
-        <RadioButton
-            android:id="@+id/Male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:text="@string/formEnterGender_Male"
-            app:layout_constraintEnd_toStartOf="@+id/Female"
-            app:layout_constraintHorizontal_bias="0.542"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <RadioButton
-            android:id="@+id/Female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/formEnterGender_Female"
-            app:layout_constraintBaseline_toBaselineOf="@+id/Male"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/formEnterAge"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/passwordContainer">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1"
+            android:maxLength="2"
+            android:inputType="date"
+            android:hint="@string/formEnterAge"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/genderGroupContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/formEnterPassword"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:background="@color/bgWhite"
+        android:layout_marginTop="30sp"
+        android:layout_marginHorizontal="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/ageContainer">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@color/blue"
+            android:text="@string/formEnterGender"/>
+        <RadioGroup
+            android:id="@+id/genderGroup"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/Age">
 
-    <EditText
-        android:id="@+id/Age"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints="password"
-        android:ems="10"
-        android:hint="@string/formEnterAge_AgeSimple"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/Password" />
+            <RadioButton
+                android:id="@+id/Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="@string/formEnterGender_Male"
+                app:layout_constraintEnd_toStartOf="@+id/Female"
+                app:layout_constraintHorizontal_bias="0.542"/>
 
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:autofillHints="password"
-        android:ems="10"
-        android:hint="@string/formEnterPassword_PasswordSimple"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+            <RadioButton
+                android:id="@+id/Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/formEnterGender_Female"
+                app:layout_constraintBaseline_toBaselineOf="@+id/Male"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/SendButton"
-        android:layout_width="145dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="28dp"
+
+        </RadioGroup>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitButton"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/green"
-        android:onClick="onClickSend"
-        android:text="@string/formSend"
+        android:text="Отправить"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintTop_toBottomOf="@+id/genderGroupContainer"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/ResetButton"
-        android:layout_width="145dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="39dp"
-        android:backgroundTint="@color/blue"
-        android:onClick="onClickReset"
-        android:text="@string/formReset"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resetButton"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/red"
+        android:text="Сбросить"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toEndOf="@+id/SendButton"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintTop_toBottomOf="@+id/genderGroupContainer" />
+
+
+    <!--    <EditText-->
+<!--        android:id="@+id/userName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="188dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:autofillHints="name"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/formEnterName_NameSimple"-->
+<!--        android:inputType="textPersonName"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.775"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="36dp"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        android:text="@string/formEnterName"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="76dp"-->
+<!--        android:text="@string/formName"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="40sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.514"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="@string/formEnterGender"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.096"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView4" />-->
+
+<!--    <RadioGroup-->
+<!--        android:id="@+id/radioGroup"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.596"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView3"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Age">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/Male"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            android:text="@string/formEnterGender_Male"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/Female"-->
+<!--            app:layout_constraintHorizontal_bias="0.542"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/textView3"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/Female"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/formEnterGender_Female"-->
+<!--            app:layout_constraintBaseline_toBaselineOf="@+id/Male"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+
+<!--    </RadioGroup>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="@string/formEnterAge"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:text="@string/formEnterPassword"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Age"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="22dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:autofillHints="password"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/formEnterAge_AgeSimple"-->
+<!--        android:inputType="date"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.176"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView4"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/Password" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/Password"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:autofillHints="password"-->
+<!--        android:ems="10"-->
+<!--        android:hint="@string/formEnterPassword_PasswordSimple"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.695"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView2"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/userName" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/SendButton"-->
+<!--        android:layout_width="145dp"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:layout_marginStart="36dp"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:onClick="onClickSend"-->
+<!--        android:text="@string/formSend"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/radioGroup"-->
+<!--        app:layout_constraintVertical_bias="0.333" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/ResetButton"-->
+<!--        android:layout_width="145dp"-->
+<!--        android:layout_height="62dp"-->
+<!--        android:layout_marginEnd="39dp"-->
+<!--        android:backgroundTint="@color/blue"-->
+<!--        android:onClick="onClickReset"-->
+<!--        android:text="@string/formReset"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.804"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/SendButton"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/radioGroup"-->
+<!--        app:layout_constraintVertical_bias="0.333" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
