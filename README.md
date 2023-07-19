@@ -7,4 +7,4 @@ simple Android project on Kotlin, there in 3 pages:
 
 3 Just a slide layout
 
-That work for university
+This work for university
